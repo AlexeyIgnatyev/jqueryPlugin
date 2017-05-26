@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Javascript</title>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+		
+		<link rel="stylesheet" href="http://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+		<link rel="stylesheet" href="css/main.css"/>
+
+		<script data-require="angular.js@1.3.x" src="https://code.angularjs.org/1.5.7/angular.js" data-semver="1.5.7"></script>
+		<script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+  		<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+	    <script src="https://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.8.2/underscore-min.js"></script>
+		
+		<script src="js/mainPlugin.js"></script>
+		<script src="js/controller.js"></script>
+	</head>
+	<body  ng-app="myApp" >
+		<!--<combo></combo>-->
+		<select id='combo'></select>
+		<script>
+			$('#combo').comboInit({
+				selectedValue: 'Yuriy',
+				options: [
+					{
+						value: 0,
+						content: 'Nikolay'
+					},
+					{
+						value: 1,
+						content: 'Andrey'
+					},
+					{
+						value: 2,
+						content: 'Vasiliy'
+					},
+					{
+						value: 3,
+						content: 'Yuriy'			
+					},
+					{
+						value: 5,
+						content: 'Anton' 
+					},
+					{
+						value: 6,
+						content: 'Vitaliy' 
+					},
+					{
+						value: 7,
+						content: 'Alexander' 
+					},
+					{
+						value: 8,
+						content: 'Gleb' 
+					}
+				],
+				onValueChange: function() {
+					console.log('Yo!');	
+					$('#combo').getValue();
+				}			
+			});
+
+			$('#combo').onValueChange();
+			$('#combo').getValue();
+			$('#combo').setValue();
+
+		</script>
+	</body>
+</html> 
