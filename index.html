@@ -16,8 +16,9 @@
 		<script src="js/controller.js"></script>
 	</head>
 	<body>
-		<!--<combo></combo>-->
 		<select id='combo'></select>
+		<input placeholder="text value to set" type="text" name="valueToSet">
+		<button id="kk" name="setValue">Set</button>
 		<script>
 			$('#combo').comboInit({
 				selectedValue: 'Yuriy',
@@ -36,7 +37,7 @@
 					},
 					{
 						value: 3,
-						content: 'Yuriy'			
+						content: 'Yuriy'		
 					},
 					{
 						value: 5,
@@ -53,6 +54,10 @@
 					{
 						value: 8,
 						content: 'Gleb' 
+					},
+					{
+						value: 9,
+						content: 'Yuriy' 
 					}
 				],
 				onValueChange: function() {
@@ -61,10 +66,13 @@
 				}			
 			});
 
-			$('#combo').onValueChange();
-			$('#combo').getValue();
-			$('#combo').setValue();
+			$('button[name=setValue]').on('click', function(){
+				$('#combo').setValue($('input[name=valueToSet').val());
+				$('input[name=valueToSet').val('');
+			});
 
+			$('#combo').onValueChange();
+			
 		</script>
 	</body>
 </html> 
